@@ -23,37 +23,49 @@ function generatePassword() {
 
   if (useLowerCase == false && useUpperCase == false && useNumeric == false && useSpecial == false) {
     alert("Please select one type of character");
-  return;
+    return;
   }
   // check to make sure that line 28 is only a number
   if (useLength < 8 || useLength > 128 || isNaN(useLength)) {
     alert("Please select length 8 or more, but less than 128")
-  return;
+    console.log(useLength);
   }
 
+  caseArray = [];
   if(lowerCaseChar) {
-    caseArray.concat(lowerCaseChar);
+    caseArray = caseArray.concat(lowerCaseChar);
     console.log(caseArray);
   }
   if(upperCaseChar) {
-    caseArray.concat(upperCaseChar);
+    caseArray = caseArray.concat(upperCaseChar);
     console.log(caseArray);
   }
   if(numericChar) {
-    caseArray.concat(numericChar);
+    caseArray = caseArray.concat(numericChar);
     console.log(caseArray);
   }
   if(specialChar) {
-    caseArray.concat(specialChar);
-    console.log(caseArray);
+    caseArray = caseArray.concat(specialChar);
+    console.log(specialChar);
   }
-
-  for (var i=0; i < useLength; i++){
-    var random= Math.floor(Math.random() * passwordString.length);
-    console.log(generatePassword);
   
+  passwordString = "";
+  for (var i = 0; i < useLength; i++){
+    //console.log(caseArray[i]);
+    var random = Math.floor(Math.random() * caseArray.length);
+    var letter = caseArray[random];
+    console.log(letter);
+    passwordString = passwordString + letter;
   }
+  //console.log(caseArray.length);
+  
+  return passwordString; // exit the function with value - password
 
+
+  //for (var i=0; i < useLength; i++){
+    //var random= Math.floor(Math.random() * useLength.length);
+    //console.log(random);
+    //}
 }
 
 // Assignment Code
@@ -61,12 +73,10 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var 
-  var password = generatePassword();
+  var passwordString = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
-
+  passwordText.value = passwordString;
 }
 generateBtn.addEventListener('click', writePassword);
 
@@ -74,8 +84,9 @@ generateBtn.addEventListener('click', writePassword);
 
 function UserInput(ps) {
   document.getElementById("password").textContent = ps;
-  console.log(password);
 }
+
+console.log("peter");
 
 // GIVEN I need a new, secure password
 // WHEN I click the button to generate a password
