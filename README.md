@@ -1,6 +1,13 @@
 # Password-Security
 
-# Javascript
+![]()
+
+Learning and adjusting to JS! 
+* [Github Repository] (https://github.com/malhill/Password-Security)
+* [Password App] (https://malhill.github.io/Password-Security/)
+
+
+## Javascript
 *Took acceptance criteria and placed it at the bottom to use as a reference. Then copied the peices to create the functions. 
 
 *Understanding the process of creating variables, giving them a function, then calling the function!
