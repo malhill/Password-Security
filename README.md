@@ -1,6 +1,6 @@
 # Password-Security
 
-![]()
+![App Screenshot](./assets/passwordcapture.PNG)
 
 Learning and adjusting to JS! 
 * [Github Repository] (https://github.com/malhill/Password-Security)
